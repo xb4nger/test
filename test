@@ -1920,15 +1920,32 @@
 		end 
 
 		
-			task.spawn(function()
-				while true do 
-					task.wait()
-					cfg.change_health()
-				end 
-			end)
 
-			return setmetatable(cfg, library)
-		end
+
+function library:esp_preview(properties)
+	-- ESP preview fully removed
+	-- keep function for compatibility with callers
+
+	return {
+		refresh_elements = function() end,
+		change_health = function() end
+	}
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		function library:refresh_notifications()  	
 			for _, notif in next, library.notifications do 
